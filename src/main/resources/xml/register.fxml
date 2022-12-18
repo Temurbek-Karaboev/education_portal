@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.RegisterController">
+    <AnchorPane fx:id="registerPage" prefHeight="514.0" prefWidth="603.0">
+      <children>
+         <TextField fx:id="fullname" layoutX="244.0" layoutY="163.0" />
+         <TextField fx:id="dob" layoutX="244.0" layoutY="216.0" />
+         <TextField fx:id="username" layoutX="244.0" layoutY="269.0" />
+         <TextField fx:id="password" layoutX="244.0" layoutY="324.0" />
+         <Label layoutX="235.0" layoutY="77.0" prefHeight="42.0" prefWidth="168.0" text="REGISTER PAGE">
+            <font>
+               <Font size="18.0" />
+            </font></Label>
+         <Button fx:id="backLogin" layoutX="470.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#toLoginPage" prefHeight="26.0" prefWidth="59.0" text="Back" />
+         <Button layoutX="289.0" layoutY="366.0" mnemonicParsing="false" text="Register" />
+         <Label layoutX="245.0" layoutY="135.0" text="Full name" />
+         <Label layoutX="244.0" layoutY="189.0" text="Date of birth" />
+         <Label layoutX="244.0" layoutY="248.0" text="Username" />
+         <Label layoutX="245.0" layoutY="306.0" text="Password" />
+      </children></AnchorPane>
+</VBox>
