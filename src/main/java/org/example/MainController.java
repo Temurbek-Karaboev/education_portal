@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -38,13 +40,13 @@ public class MainController implements Initializable {
     public TextField login;
 
     @FXML
-    public TextField password;
+    public PasswordField password;
 
 
     @FXML
-    public void loginSubmitClick(MouseEvent e){
-        System.out.println(login.getText());
-        System.out.println(password.getText());
+    public void loginSubmitClick(MouseEvent e) throws SQLException {
+        Queries queries = new Queries();
+        System.out.println(queries.checkUser(login.getText(), password.getText()));
     }
 
 

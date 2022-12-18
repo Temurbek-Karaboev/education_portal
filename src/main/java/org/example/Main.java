@@ -2,14 +2,12 @@ package org.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import javafx.stage.Stage;
 
-import java.io.InputStream;
 import java.net.URL;
 
 
@@ -38,7 +36,7 @@ public class Main extends Application {
 //            primaryStage.show();
 
             FXMLLoader loader = new FXMLLoader();
-            URL xmlUrl = getClass().getResource("/xml/code.fxml");
+            URL xmlUrl = getClass().getResource("/xml/login.fxml");
             loader.setLocation(xmlUrl);
             Parent root = loader.load();
 
