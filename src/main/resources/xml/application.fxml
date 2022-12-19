@@ -55,8 +55,8 @@
             <TextField fx:id="phone" layoutX="246.0" layoutY="188.0" />
             <TextField fx:id="passport" layoutX="244.0" layoutY="106.0" />
             <ChoiceBox fx:id="faculty" layoutX="247.0" layoutY="284.0" prefWidth="150.0" />
-            <Button fx:id="submit" layoutX="296.0" layoutY="337.0" mnemonicParsing="false" text="Button" />
-            <Button fx:id="backButton" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Back" />
+            <Button fx:id="submit" layoutX="296.0" layoutY="337.0" mnemonicParsing="false" text="Submit"  onMouseClicked="#submitApp" />
+            <Button fx:id="backButton" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Back" onMouseClicked="#backToList"/>
             <Label layoutX="156.0" layoutY="75.0" prefHeight="18.0" prefWidth="60.0" text="Full Name" />
             <Label layoutX="136.0" layoutY="110.0" prefHeight="18.0" prefWidth="99.0" text="Passport Data" />
             <Label layoutX="175.0" layoutY="150.0" prefHeight="18.0" prefWidth="60.0" text="Address" />

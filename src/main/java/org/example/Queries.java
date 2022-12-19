@@ -87,4 +87,12 @@ public class Queries {
         String QUERY = "delete from users where username ='"+username+"';";
         DBUtils.getConnection().createStatement().execute(QUERY);
     }
+
+    public void addAssignment(String fullname, String gender,  String passport, String address, String phone, String faculty) throws SQLException {
+        String QUERY = "INSERT INTO application(fullname, gender, serial, address, phone, faculty) " +
+                "VALUES ('"+fullname+"', '"+gender+"', '"+passport+"', '"+address+"', '"+ phone+ "', '"+faculty+"');";
+        DBUtils.getConnection().createStatement().execute(QUERY);
+    }
+
+
 }
