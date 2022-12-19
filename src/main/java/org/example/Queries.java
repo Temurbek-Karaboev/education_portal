@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.entity.User;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -30,7 +32,7 @@ public class Queries {
             System.out.println("Method: checkUser, Queries class");
             System.out.println(e.getMessage());
         }
-        if (result.wasNull()){
+        if (!result.next()){
             return "none";
         }
         Boolean isAdmin = result.getString("type").equals("admin");
@@ -48,14 +50,41 @@ public class Queries {
         ResultSet result = null;
         try {
             result = DBUtils.getConnection().createStatement().executeQuery(QUERY);
+            DBUtils.getConnection().close();
         }
         catch (Exception e){
             System.out.println("Method: checkDuplicate, Queries class");
             System.out.println(e.getMessage());
         }
-        if (result.wasNull()){
+        if (result.next()){
             return true;
         }
         return false;
+    }
+
+    public User getUser(String username) throws SQLException {
+        String QUERY = "Select * From users where username ='"+username+"';";
+        ResultSet result = null;
+        try {
+            result = DBUtils.getConnection().createStatement().executeQuery(QUERY);
+            DBUtils.getConnection().close();
+        }
+        catch (Exception e){
+            System.out.println("Method: getUser, Queries class");
+            System.out.println(e.getMessage());
+        }
+        User user = new User();
+        while (result.next()){
+            user.setFullname(result.getString("fullname"));
+            user.setUsername(result.getString("username"));
+            user.setPassword(result.getString("password"));
+        }
+
+        return user;
+    }
+
+    public void deleteUser(String username) throws SQLException {
+        String QUERY = "delete from users where username ='"+username+"';";
+        DBUtils.getConnection().createStatement().execute(QUERY);
     }
 }

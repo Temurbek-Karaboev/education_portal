@@ -9,14 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.example.entity.DataSingleton;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,11 +40,53 @@ public class MainController implements Initializable {
     @FXML
     public PasswordField password;
 
+    DataSingleton data = DataSingleton.getInstance();
+
 
     @FXML
-    public void loginSubmitClick(MouseEvent e) throws SQLException {
+    public void loginSubmitClick(MouseEvent event) throws SQLException, IOException {
         Queries queries = new Queries();
-        System.out.println(queries.checkUser(login.getText(), password.getText()));
+
+        String result = queries.checkUser(login.getText(), password.getText());
+        if(result.equals("admin")){
+            stage.setUserData(login.getText());
+            data.setUsername(login.getText());
+            FXMLLoader loader = new FXMLLoader();
+            URL xmlUrl = getClass().getResource("/xml/chat.fxml");
+            loader.setLocation(xmlUrl);
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+        } else if (result.equals("user")) {
+            data.setUsername(login.getText());
+
+            FXMLLoader loader = new FXMLLoader();
+            URL xmlUrl = getClass().getResource("/xml/menu.fxml");
+            loader.setLocation(xmlUrl);
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+        }
+        else {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setContentText("Username or Password is incorrect");
+            errorAlert.showAndWait();
+            FXMLLoader loader = new FXMLLoader();
+            URL xmlUrl = getClass().getResource("/xml/login.fxml");
+            loader.setLocation(xmlUrl);
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            appStage.setScene(scene);
+            appStage.show();
+        }
     }
 
 

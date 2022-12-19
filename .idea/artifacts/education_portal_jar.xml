@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="education_portal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/education_portal_jar</output-path>
+    <root id="archive" name="education_portal.jar" />
+  </artifact>
+</component>
