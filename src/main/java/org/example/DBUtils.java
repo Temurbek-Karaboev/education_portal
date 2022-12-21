@@ -5,13 +5,11 @@ import java.sql.DriverManager;
 
 public interface DBUtils {
 
-
-
     static Connection getConnection() {
 
         final String DB_USERNAME = "postgres";
         final String DB_PASSWORD = "root";
-        final String DB_URL = "jdbc:postgresql://localhost/univ";
+        final String DB_URL = "jdbc:postgresql://192.168.17.119:5432/univ";
 
         Connection conn = null;
         try {

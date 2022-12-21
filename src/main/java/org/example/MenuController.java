@@ -54,20 +54,16 @@ public void goToList(MouseEvent event) throws IOException{
 }
 @FXML
 public void goToChat(MouseEvent event) throws IOException{
-    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-    errorAlert.setContentText("Support CHAT IS NOT READY FOR NOW, COME IN 2023 year!");
-    errorAlert.showAndWait();
 
+    FXMLLoader loader = new FXMLLoader();
+    URL xmlUrl = getClass().getResource("/xml/LoginView.fxml");
+    loader.setLocation(xmlUrl);
+    Parent root = loader.load();
 
-//    FXMLLoader loader = new FXMLLoader();
-//    URL xmlUrl = getClass().getResource("/xml/degree.fxml");
-//    loader.setLocation(xmlUrl);
-//    Parent root = loader.load();
-//
-//    Scene scene = new Scene(root);
-//    Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//    appStage.setScene(scene);
-//    appStage.show();
+    Scene scene = new Scene(root);
+    Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    appStage.setScene(scene);
+    appStage.show();
 }
 
 
