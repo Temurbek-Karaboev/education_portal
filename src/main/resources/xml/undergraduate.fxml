@@ -32,52 +32,54 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.degrees.UnderController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.degrees.UnderController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <Label layoutX="181.0" layoutY="14.0" prefHeight="46.0" prefWidth="271.0" text="UNDER-GRADUATE" textAlignment="CENTER">
-               <font>
-                  <Font size="31.0" />
-               </font>
-            </Label>
-            <Label layoutX="524.0" layoutY="60.0" prefHeight="18.0" prefWidth="90.0" text="Apply to them👇" />
-            <Button onMouseClicked="#goToApply1" fx:id="apply1" layoutX="536.0" layoutY="100.0" mnemonicParsing="false" text="Apply " />
-            <Button onMouseClicked="#goToApply2" fx:id="apply2" layoutX="536.0" layoutY="167.0" mnemonicParsing="false" text="Apply " />
-            <Button onMouseClicked="#goToApply3" fx:id="apply3" layoutX="536.0" layoutY="233.0" mnemonicParsing="false" text="Apply " />
-            <Button onMouseClicked="#goToApply4" fx:id="apply4" layoutX="536.0" layoutY="302.0" mnemonicParsing="false" text="Apply " />
-            <Button onMouseClicked="#news11"        fx:id="news1" layoutX="445.0" layoutY="100.0" mnemonicParsing="false" text="News" />
-            <Button onMouseClicked="#news21"        fx:id="news2" layoutX="445.0" layoutY="167.0" mnemonicParsing="false" text="News" />
-            <Button onMouseClicked="#news31"        fx:id="news3" layoutX="445.0" layoutY="233.0" mnemonicParsing="false" text="News" />
-            <Button onMouseClicked="#news41"        fx:id="news4" layoutX="445.0" layoutY="302.0" mnemonicParsing="false" text="News" />
-            <Label layoutX="83.0" layoutY="99.0" text="Tashkent State University of Economics">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="83.0" layoutY="166.0" text="Uzbekistan State Art And Culture Institute">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="83.0" layoutY="232.0" text="Tashkent Medical Academy">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="83.0" layoutY="301.0" text="Uzbek State University of World Languages">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Button onMouseClicked="#goToBack" layoutX="586.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
-      </children>
-    </AnchorPane>
+      <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+         <children>
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0">
+            <children>
+                  <Label layoutX="181.0" layoutY="14.0" prefHeight="46.0" prefWidth="271.0" text="UNDER-GRADUATE" textAlignment="CENTER">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="524.0" layoutY="60.0" prefHeight="18.0" prefWidth="90.0" text="Apply to them👇" />
+                  <Button fx:id="apply1" layoutX="536.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#goToApply1" text="Apply " />
+                  <Button fx:id="apply2" layoutX="536.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#goToApply2" text="Apply " />
+                  <Button fx:id="apply3" layoutX="536.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#goToApply3" text="Apply " />
+                  <Button fx:id="apply4" layoutX="536.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#goToApply4" text="Apply " />
+                  <Button fx:id="news1" layoutX="445.0" layoutY="100.0" mnemonicParsing="false" onMouseClicked="#news11" text="News" />
+                  <Button fx:id="news2" layoutX="445.0" layoutY="167.0" mnemonicParsing="false" onMouseClicked="#news21" text="News" />
+                  <Button fx:id="news3" layoutX="445.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#news31" text="News" />
+                  <Button fx:id="news4" layoutX="445.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#news41" text="News" />
+                  <Label layoutX="83.0" layoutY="99.0" text="Tashkent State University of Economics">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="83.0" layoutY="166.0" text="Uzbekistan State Art And Culture Institute">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="83.0" layoutY="232.0" text="Tashkent Medical Academy">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="83.0" layoutY="301.0" text="Uzbek State University of World Languages">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="586.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goToBack" text="Back" />
+            </children>
+          </AnchorPane>
+         </children>
+      </HBox>
   </children>
 </VBox>
