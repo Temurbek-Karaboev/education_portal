@@ -3,11 +3,13 @@ package org.example;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
 
@@ -34,7 +36,11 @@ public class MenuController implements Initializable {
 
             Scene scene = new Scene(root);
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            appStage.setY(screenBounds.getHeight() / 2 - appStage.getHeight() / 2);
+            appStage.setX(screenBounds.getWidth() / 2 - appStage.getWidth() / 2);
             appStage.setScene(scene);
+
             appStage.show();
         }
     }

@@ -44,9 +44,7 @@ public class Main extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
-        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        primaryStage.setY(screenBounds.getHeight() / 2 - primaryStage.getHeight() / 2);
-        primaryStage.setX(screenBounds.getWidth() / 2 - primaryStage.getWidth() / 2);
+
 
         primaryStage.setScene(scene);
         primaryStage.show();
