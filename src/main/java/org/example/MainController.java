@@ -17,8 +17,11 @@ import javafx.stage.Stage;
 import org.example.entity.DataSingleton;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -46,7 +49,6 @@ public class MainController implements Initializable {
     @FXML
     public void loginSubmitClick(MouseEvent event) throws SQLException, IOException {
         Queries queries = new Queries();
-
         String result = queries.checkUser(login.getText(), password.getText());
         if(result.equals("admin")){
             stage.setUserData(login.getText());
@@ -62,6 +64,9 @@ public class MainController implements Initializable {
             appStage.show();
         } else if (result.equals("user")) {
             data.setUsername(login.getText());
+
+
+
 
             FXMLLoader loader = new FXMLLoader();
             URL xmlUrl = getClass().getResource("/xml/menu.fxml");
@@ -87,6 +92,8 @@ public class MainController implements Initializable {
             appStage.setScene(scene);
             appStage.show();
         }
+
+
     }
 
 

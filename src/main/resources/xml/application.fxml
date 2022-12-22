@@ -32,38 +32,38 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ApplicationController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ApplicationController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
          <children>
-            <Label layoutX="257.0" layoutY="14.0" text="Application">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Label>
-            <TextField fx:id="fullname" layoutX="244.0" layoutY="72.0" />
-            <TextField fx:id="address" layoutX="246.0" layoutY="147.0" />
-            <ChoiceBox fx:id="gender" layoutX="248.0" layoutY="238.0" prefWidth="150.0" />
-            <TextField fx:id="phone" layoutX="246.0" layoutY="188.0" />
-            <TextField fx:id="passport" layoutX="244.0" layoutY="106.0" />
-            <ChoiceBox fx:id="faculty" layoutX="247.0" layoutY="284.0" prefWidth="150.0" />
-            <Button fx:id="submit" layoutX="296.0" layoutY="337.0" mnemonicParsing="false" text="Submit"  onMouseClicked="#submitApp" />
-            <Button fx:id="backButton" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" text="Back" onMouseClicked="#backToList"/>
-            <Label layoutX="156.0" layoutY="75.0" prefHeight="18.0" prefWidth="60.0" text="Full Name" />
-            <Label layoutX="136.0" layoutY="110.0" prefHeight="18.0" prefWidth="99.0" text="Passport Data" />
-            <Label layoutX="175.0" layoutY="150.0" prefHeight="18.0" prefWidth="60.0" text="Address" />
-            <Label layoutX="139.0" layoutY="191.0" prefHeight="18.0" prefWidth="133.0" text="Phone number" />
-            <Label layoutX="185.0" layoutY="234.0" text="Gender" />
-            <Label layoutX="185.0" layoutY="289.0" text="Faculty" />
+          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="NEVER">
+               <children>
+                  <Label layoutX="257.0" layoutY="14.0" text="Application">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fullname" layoutX="244.0" layoutY="72.0" />
+                  <TextField fx:id="address" layoutX="246.0" layoutY="147.0" />
+                  <ChoiceBox fx:id="gender" layoutX="248.0" layoutY="238.0" prefWidth="150.0" />
+                  <TextField fx:id="phone" layoutX="246.0" layoutY="188.0" />
+                  <TextField fx:id="passport" layoutX="244.0" layoutY="106.0" />
+                  <ChoiceBox fx:id="faculty" layoutX="247.0" layoutY="284.0" prefWidth="150.0" />
+                  <Button fx:id="submit" layoutX="296.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#submitApp" text="Submit" />
+                  <Button fx:id="backButton" layoutX="547.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#backToList" text="Back" />
+                  <Label layoutX="156.0" layoutY="75.0" prefHeight="18.0" prefWidth="60.0" text="Full Name" />
+                  <Label layoutX="136.0" layoutY="110.0" prefHeight="18.0" prefWidth="99.0" text="Passport Data" />
+                  <Label layoutX="175.0" layoutY="150.0" prefHeight="18.0" prefWidth="60.0" text="Address" />
+                  <Label layoutX="139.0" layoutY="191.0" prefHeight="18.0" prefWidth="133.0" text="Phone number" />
+                  <Label layoutX="185.0" layoutY="234.0" text="Gender" />
+                  <Label layoutX="185.0" layoutY="289.0" text="Faculty" />
+               </children>
+          </AnchorPane>
          </children>
-    </AnchorPane>
+      </HBox>
   </children>
 </VBox>

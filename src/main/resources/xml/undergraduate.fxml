@@ -52,10 +52,10 @@
             <Button onMouseClicked="#goToApply2" fx:id="apply2" layoutX="536.0" layoutY="167.0" mnemonicParsing="false" text="Apply " />
             <Button onMouseClicked="#goToApply3" fx:id="apply3" layoutX="536.0" layoutY="233.0" mnemonicParsing="false" text="Apply " />
             <Button onMouseClicked="#goToApply4" fx:id="apply4" layoutX="536.0" layoutY="302.0" mnemonicParsing="false" text="Apply " />
-            <Button onMouseClicked="#news1"        fx:id="news1" layoutX="445.0" layoutY="100.0" mnemonicParsing="false" text="News" />
-            <Button onMouseClicked="#news2"        fx:id="news2" layoutX="445.0" layoutY="167.0" mnemonicParsing="false" text="News" />
-            <Button onMouseClicked="#news3"        fx:id="news3" layoutX="445.0" layoutY="233.0" mnemonicParsing="false" text="News" />
-            <Button onMouseClicked="#news4"        fx:id="news4" layoutX="445.0" layoutY="302.0" mnemonicParsing="false" text="News" />
+            <Button onMouseClicked="#news11"        fx:id="news1" layoutX="445.0" layoutY="100.0" mnemonicParsing="false" text="News" />
+            <Button onMouseClicked="#news21"        fx:id="news2" layoutX="445.0" layoutY="167.0" mnemonicParsing="false" text="News" />
+            <Button onMouseClicked="#news31"        fx:id="news3" layoutX="445.0" layoutY="233.0" mnemonicParsing="false" text="News" />
+            <Button onMouseClicked="#news41"        fx:id="news4" layoutX="445.0" layoutY="302.0" mnemonicParsing="false" text="News" />
             <Label layoutX="83.0" layoutY="99.0" text="Tashkent State University of Economics">
                <font>
                   <Font size="18.0" />

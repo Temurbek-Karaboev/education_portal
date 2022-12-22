@@ -32,27 +32,29 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.DegreeController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.DegreeController">
   <children>
-    <AnchorPane fx:id="degree" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <Label layoutX="237.0" layoutY="20.0" prefHeight="35.0" prefWidth="398.0" text="Universities List" textAlignment="CENTER">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="293.0" layoutY="61.0" text="Select Degree" />
-            <Button fx:id="under" layoutX="66.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#goToUnder" prefHeight="181.0" prefWidth="116.0" text="UNDER GRADUATE" textAlignment="CENTER" wrapText="true" />
-            <Button fx:id="post" layoutX="262.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#goToPost" prefHeight="181.0" prefWidth="116.0" text="POST     GRADUATE" textAlignment="CENTER" wrapText="true" />
-            <Button fx:id="doctoral" layoutX="453.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#goToDoct" prefHeight="181.0" prefWidth="116.0" text="DOCTORAL PROGRAMMES" textAlignment="CENTER" wrapText="true" />
-            <Button fx:id="menuBack" layoutX="552.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#goToMenu" text="Back" />
-      </children>
-    </AnchorPane>
+      <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+         <children>
+          <AnchorPane fx:id="degree" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="NEVER">
+            <children>
+                  <Label layoutX="237.0" layoutY="20.0" prefHeight="35.0" prefWidth="398.0" text="Universities List" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="293.0" layoutY="61.0" text="Select Degree" />
+                  <Button fx:id="under" layoutX="66.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#goToUnder" prefHeight="181.0" prefWidth="116.0" text="UNDER GRADUATE" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="post" layoutX="262.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#goToPost" prefHeight="181.0" prefWidth="116.0" text="POST     GRADUATE" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="doctoral" layoutX="453.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#goToDoct" prefHeight="181.0" prefWidth="116.0" text="DOCTORAL PROGRAMMES" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="menuBack" layoutX="552.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#goToMenu" text="Back" />
+            </children>
+          </AnchorPane>
+         </children>
+      </HBox>
   </children>
 </VBox>

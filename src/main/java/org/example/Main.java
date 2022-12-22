@@ -3,9 +3,12 @@ package org.example;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.robot.Robot;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -16,11 +19,11 @@ import java.net.URL;
  */
 public class Main extends Application {
 
-        @Override
-        public void start(Stage primaryStage) throws Exception {
-            primaryStage.setTitle("UZBEKISTAN UNIVERSITY EDUCATION PORTAL");
-//            primaryStage.setWidth(500);
-//            primaryStage.setHeight(600);
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("UZBEKISTAN UNIVERSITY EDUCATION PORTAL");
+        primaryStage.setWidth(640);
+        primaryStage.setHeight(400);
 //
 //
 //            InputStream iconStream = getClass().getResourceAsStream("/img/img.png");
@@ -35,18 +38,23 @@ public class Main extends Application {
 //
 //            primaryStage.show();
 
-            FXMLLoader loader = new FXMLLoader();
-            URL xmlUrl = getClass().getResource("/xml/login.fxml");
-            loader.setLocation(xmlUrl);
-            Parent root = loader.load();
+        FXMLLoader loader = new FXMLLoader();
+        URL xmlUrl = getClass().getResource("/xml/login.fxml");
+        loader.setLocation(xmlUrl);
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
 
-            primaryStage.setScene(new Scene(root));
-            primaryStage.show();
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        primaryStage.setY(screenBounds.getHeight() / 2 - primaryStage.getHeight() / 2);
+        primaryStage.setX(screenBounds.getWidth() / 2 - primaryStage.getWidth() / 2);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
 
-        }
+    }
 
     public static void main(String[] args) {
         Application.launch();
     }
-    }
+}

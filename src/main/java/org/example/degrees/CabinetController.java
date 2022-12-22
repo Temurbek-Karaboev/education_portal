@@ -51,9 +51,10 @@ public class CabinetController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        old_fullname.setText("Old data is : "+user.getFullname());
-        old_password.setText("Old data is : "+user.getPassword());
-        old_username.setText("Old data is : "+user.getUsername());
+        old_fullname.setText("Old FullName is : "+user.getFullname());
+        old_username.setText("Old Username is : "+user.getUsername());
+        old_password.setText("Old Password is : "+user.getPassword());
+
 
     }
 
@@ -72,17 +73,14 @@ public class CabinetController implements Initializable {
 
     @FXML
     public void changeData(MouseEvent event) throws IOException, SQLException {
-        Queries queries = new Queries();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText("Are you sure?");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK){
-            queries.deleteUser(dataSingleton.getUsername());
-            dataSingleton.setUsername(username.getText());
-            queries.addUsers(fullname.getText(), username.getText(), password.getText());
+        if (fullname.getText().isBlank() || username.getText().isBlank() || password.getText().isBlank()) {
+            Queries queries = new Queries();
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Fields are Blank ! Fill out them !");
+            alert.showAndWait();
 
             FXMLLoader loader = new FXMLLoader();
-            URL xmlUrl = getClass().getResource("/xml/menu.fxml");
+            URL xmlUrl = getClass().getResource("/xml/cabinet.fxml");
             loader.setLocation(xmlUrl);
             Parent root = loader.load();
 
@@ -90,18 +88,36 @@ public class CabinetController implements Initializable {
             Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             appStage.setScene(scene);
             appStage.show();
-        }
-        else{
-            FXMLLoader loader = new FXMLLoader();
-            URL xmlUrl = getClass().getResource("/xml/menu.fxml");
-            loader.setLocation(xmlUrl);
-            Parent root = loader.load();
+        } else {
+            Queries queries = new Queries();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Are you sure?");
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.OK) {
+                queries.deleteUser(dataSingleton.getUsername());
+                dataSingleton.setUsername(username.getText());
+                queries.addUsers(fullname.getText(), username.getText(), password.getText());
 
-            Scene scene = new Scene(root);
-            Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            appStage.setScene(scene);
-            appStage.show();
+                FXMLLoader loader = new FXMLLoader();
+                URL xmlUrl = getClass().getResource("/xml/menu.fxml");
+                loader.setLocation(xmlUrl);
+                Parent root = loader.load();
+
+                Scene scene = new Scene(root);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+            } else {
+                FXMLLoader loader = new FXMLLoader();
+                URL xmlUrl = getClass().getResource("/xml/menu.fxml");
+                loader.setLocation(xmlUrl);
+                Parent root = loader.load();
+
+                Scene scene = new Scene(root);
+                Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                appStage.setScene(scene);
+                appStage.show();
+            }
         }
     }
-
 }

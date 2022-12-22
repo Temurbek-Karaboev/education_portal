@@ -1,9 +1,12 @@
 package org.example;
 
+import org.example.entity.DataSingleton;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public interface DBUtils {
+
 
 
 
@@ -19,8 +22,9 @@ public interface DBUtils {
             Class.forName("org.postgresql.Driver");
 
             conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+
             if (conn != null) {
-                System.out.println("Connection worked");
+                System.out.println("DB✔");
             } else {
                 System.out.println("Connection failed");
             }
