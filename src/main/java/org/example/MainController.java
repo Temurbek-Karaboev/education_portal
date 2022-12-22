@@ -64,10 +64,6 @@ public class MainController implements Initializable {
             appStage.show();
         } else if (result.equals("user")) {
             data.setUsername(login.getText());
-
-
-
-
             FXMLLoader loader = new FXMLLoader();
             URL xmlUrl = getClass().getResource("/xml/menu.fxml");
             loader.setLocation(xmlUrl);
