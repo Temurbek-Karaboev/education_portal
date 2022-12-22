@@ -11,7 +11,7 @@ public interface DBUtils {
 
         final String DB_USERNAME = "postgres";
         final String DB_PASSWORD = "root";
-        final String DB_URL = "jdbc:postgresql://localhost/univ";
+        final String DB_URL = "jdbc:postgresql://192.168.17.119:5432/univ";
 
         Connection conn = null;
         try {
